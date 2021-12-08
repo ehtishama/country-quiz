@@ -1,0 +1,49 @@
+.option {
+    border: 2px solid var(--text-secondary);
+    margin-bottom: 1.4em;
+    padding: 1.3em;
+    border-radius: 1em;
+    color: var(--text-secondary);
+
+    display: flex;
+    align-items: center;
+    gap: .6em;
+
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-size: .9em;
+    font-family: 'Poppins';
+    
+}
+.option:hover {
+    background: var(--color-secondary);
+    color: white;
+    border-color: var(--color-secondary);
+    cursor: pointer;
+
+}
+
+.option.success {
+    background: var(--color-success);
+    color: white;
+    border-color: var(--color-success);
+}
+
+.option.danger {
+    background: var(--color-danger);
+    color: white;
+    border-color: var(--color-danger);
+}
+
+
+.option span {
+    font-size: 1.4em;
+}
+.option p {
+    font-size: 1.1em;
+    padding: 0;
+    margin: 0;
+    
+}

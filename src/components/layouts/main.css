@@ -1,0 +1,15 @@
+.container-main {
+    min-height: 100vh;
+    background-image: url('../../assets/images/background.png');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+
+    /* center every thing in this container */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
