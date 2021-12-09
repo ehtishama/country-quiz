@@ -5,7 +5,7 @@ import "./style.css";
 
 export function QuestionCard({
     showAnswer,
-    country: { name },
+    country,
     options,
     capital,
     onOptionClick,
@@ -42,7 +42,7 @@ export function QuestionCard({
                     key={option}
                     onOptionClick={__onOptionClick}
                     className={getClassName(
-                        name.common,
+                        country,
                         selectedOption,
                         option,
                         showAnswer

@@ -8,31 +8,25 @@ import { useCountries } from "../../lib/useCountries.js";
 export const Home = () => {
     // state
     const countries = useCountries();
-    const [question, setQuestion] = useState({
-        someCountry: null,
-        itsCapital: null,
-        possibleOptions: null,
-        correct: null,
-    });
-
-    const [score, setScore] = useState(0);
+    const [question, setQuestion] = useState(null);
     const [showAnswer, setShowAnswer] = useState(false);
+    const [score, setScore] = useState(0);
     const [gameOver, setGameOver] = useState(false);
 
     useEffect(() => {
         setQuestion(generateQuestion(countries));
     }, [countries]);
 
-    if (countries === null || question.someCountry === null) return "";
+    if (countries === null || question === null) return "Loading... Please wait";
 
-    const { someCountry, itsCapital, possibleOptions } = question;
+    const { country, capital, possibleOptions, flag } = question;
 
     const onOptionClick = (option) => {
         // do something with option
         setShowAnswer(true);
 
         setTimeout(() => {
-            if (option === someCountry.name.common) {
+            if (option === country) {
                 setScore(score + 1);
                 setShowAnswer(false);
                 setQuestion(generateQuestion(countries));
@@ -54,29 +48,28 @@ export const Home = () => {
                 <ResultCard score={score} onTryAgain={restartGame} />
             ) : (
                 <QuestionCard
-                    country={someCountry}
-                    capital={itsCapital}
+                    country={country}
+                    capital={capital}
                     options={possibleOptions}
                     onOptionClick={onOptionClick}
                     showAnswer={showAnswer}
-                    flag={getRandom(0, 2) ? someCountry.flags.svg : null}
+                    flag={flag} // could be null
                 />
             )}
         </Layout>
     );
 };
 
+// helper functions that generates a random question
+// from a given array of countries
 const generateQuestion = (countries) => {
-    if (countries === null)
-        return {
-            someCountry: null,
-            itsCapital: null,
-            possibleOptions: null,
-        };
+    if (countries === null) return null;
+
     // select a random country
     const someCountry = countries[getRandom(0, countries.length)];
     if (!someCountry || !someCountry.capital) generateQuestion(countries);
-    const itsCapital = someCountry.capital[0];
+
+    const capital = someCountry.capital[0];
 
     // select somePossible options
     const possibleOptions = [someCountry.name.common];
@@ -93,8 +86,9 @@ const generateQuestion = (countries) => {
     shuffle(possibleOptions);
 
     return {
-        someCountry,
-        itsCapital,
+        country: someCountry.name.common,
+        capital,
         possibleOptions,
+        flag: getRandom(0, 2) ? someCountry.flags.svg : null,
     };
 };
