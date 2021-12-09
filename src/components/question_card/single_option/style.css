@@ -1,16 +1,16 @@
 .option {
     border: 2px solid var(--text-secondary);
     margin-bottom: .8em;
-    padding: .8em;
-    border-radius: 1em;
+    padding: .7em 1.2em;
+    border-radius: .6em;
     color: var(--text-secondary);
 
     display: flex;
     align-items: center;
-    gap: .6em;
+    gap: 2.6em;
 
     font-weight: bold;
-    display: block;
+    
     width: 100%;
     background: transparent;
     font-size: .9em;
@@ -39,7 +39,7 @@
 
 
 .option span {
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 .option p {
     font-size: 1.1em;

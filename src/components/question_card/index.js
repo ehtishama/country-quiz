@@ -37,10 +37,10 @@ export function QuestionCard({
                 </h2>
             )}
 
-            {options.map((option) => (
+            {options.map((option, idx) => (
                 <SingleOption
                     value={option}
-                    key={option}
+                    key={idx}
                     onOptionClick={__onOptionClick}
                     className={getClassName(
                         country,
@@ -48,6 +48,7 @@ export function QuestionCard({
                         option,
                         showAnswer
                     )}
+                    order={idx}
                 />
             ))}
         </Card>
