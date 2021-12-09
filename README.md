@@ -4,9 +4,9 @@ This project is a solution to the frontend coding challenge at [devChallenges](h
 The project is made with [React](https://reactjs.com) using `create-react-app`. 
 
 ## Demo
-The app is live [here](https://infallible-bose-7cf858.netlify.app/) 
+The app is live [here](https://infallible-bose-7cf858.netlify.app/).
 
 
 ## How to run
 1. Make sure you have Node Js installed. 
-2. Clone this repo and type `npm run start` in the terminal
+2. Clone this repo and type `npm run start` in the terminal.
