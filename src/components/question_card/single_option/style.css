@@ -1,7 +1,7 @@
 .option {
     border: 2px solid var(--text-secondary);
-    margin-bottom: 1em;
-    padding: 1em;
+    margin-bottom: .8em;
+    padding: .8em;
     border-radius: 1em;
     color: var(--text-secondary);
 

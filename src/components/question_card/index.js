@@ -4,6 +4,7 @@ import { SingleOption } from "./single_option";
 import "./style.css";
 
 export function QuestionCard({
+    displayHeaderImage,
     showAnswer,
     country,
     options,
@@ -18,7 +19,7 @@ export function QuestionCard({
         onOptionClick(option);
     };
     return (
-        <Card>
+        <Card displayHeaderImage={displayHeaderImage}>
             {flag && (
                 <>
                     <div className="flag-container">

@@ -3,7 +3,7 @@
 }
 
 .card_container .heading_outer {
-    font-size: 2em;
+    font-size: 1.8em;
     color: white;
     padding: 0 0 .4em 0;
 }
@@ -13,5 +13,17 @@
     color: #2e2e2e;
     padding: 2em;
     box-shadow: 3px 3px 3px #2e2e2e60;
+    position: relative;
 }
 
+.card .header_image {
+    display: flex;
+    justify-content: right;
+    position: absolute;
+    right: 0;
+    top: -6.4em;
+}
+
+.card .header_image img {
+    width: 8em;
+}

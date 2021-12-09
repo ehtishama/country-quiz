@@ -17,7 +17,8 @@ export const Home = () => {
         setQuestion(generateQuestion(countries));
     }, [countries]);
 
-    if (countries === null || question === null) return "Loading... Please wait";
+    if (countries === null || question === null)
+        return "Loading... Please wait";
 
     const { country, capital, possibleOptions, flag } = question;
 
@@ -48,6 +49,7 @@ export const Home = () => {
                 <ResultCard score={score} onTryAgain={restartGame} />
             ) : (
                 <QuestionCard
+                    displayHeaderImage={true}
                     country={country}
                     capital={capital}
                     options={possibleOptions}
