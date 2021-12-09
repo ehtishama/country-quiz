@@ -4,8 +4,12 @@ import { QuestionCard } from "../../components/question_card/index.js";
 import { ResultCard } from "../../components/result_card/index.js";
 import { getRandom, shuffle } from "../../lib/helper.js";
 import { useCountries } from "../../lib/useCountries.js";
+import { useTitle } from "../../lib/useTitle.js";
 
 export const Home = () => {
+
+    useTitle("Home - Country Quiz solution")
+
     // state
     const countries = useCountries();
     const [question, setQuestion] = useState(null);
