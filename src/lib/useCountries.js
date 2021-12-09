@@ -5,9 +5,13 @@ export const useCountries = () => {
     const url = `https://restcountries.com/v3.1/all`;
 
     useEffect(() => {
-        fetch(url)
-            .then((resp) => resp.json())
-            .then(setCountries);
+        try {
+            fetch(url)
+                .then((resp) => resp.json())
+                .then(setCountries);
+        } catch (e) {
+            console.error(e);
+        }
     }, [url]);
     return countries;
 };

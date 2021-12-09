@@ -1,13 +1,17 @@
+.card_container {
+    width: 27em;
+}
+
 .card_container .heading_outer {
-    font-size: 2.2em;
+    font-size: 2em;
     color: white;
-    padding: .4em 0;
+    padding: 0 0 .4em 0;
 }
 .card {
-    width: 28em;
     background: white;
-    border-radius: 2em;
+    border-radius: 1.4em;
     color: #2e2e2e;
-    padding: 2.5em;
+    padding: 2em;
+    box-shadow: 3px 3px 3px #2e2e2e60;
 }
 

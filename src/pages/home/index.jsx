@@ -6,6 +6,7 @@ import { getRandom, shuffle } from "../../lib/helper.js";
 import { useCountries } from "../../lib/useCountries.js";
 
 export const Home = () => {
+    // state
     const countries = useCountries();
     const [question, setQuestion] = useState({
         someCountry: null,
